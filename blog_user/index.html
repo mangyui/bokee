@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MANGYU博客</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="maincss/main.css">
+    <style>
+        .container-header {
+            border-bottom: 5px solid #efefef;
+        }
+
+        .container-header h4,
+        .conent h4,
+        .rightlist h4 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container-header h4 {
+            margin-top: 0;
+            padding-left: 5px;
+            background: url(http://cms.tianyaui.com/cms_fragments/res/8975/images/blog.png) no-repeat 0 -305px;
+        }
+
+        .block {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            background-color: #f6f6f6;
+        }
+
+        .column {
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .rightlist {
+            width: 100%;
+            border-top: 6px double #f6f6f6;
+            margin-top: 20px;
+        }
+
+        .container-right {
+            border-left: 1px solid #e2e2e2;
+        }
+
+        .conent {
+            margin: 20px 0;
+        }
+
+        .conent .content-title {
+            color: #444;
+            padding: 0 10px 10px;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .mysearch {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .mysearch .mysearch-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24%;
+            height: 100%;
+            border-radius: 0 4px 4px 0;
+            background-color: #208eda;
+            color: #fff;
+            border: 0;
+        }
+
+        .block h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .block-right-top p {
+            color: #999;
+            padding: 10px 0 24px;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .block-right-top .btn {
+            margin: 20px auto 0;
+            display: block;
+            font-size: 18px;
+            background-color: #3882ce;
+            border: 0;
+            width: 75%;
+            padding: 10px;
+        }
+
+        .ranking h4 {
+            margin-bottom: 20px;
+        }
+
+        .ranking .ranking-no {
+            background-color: #ccc;
+            color: #fff;
+            padding: 0 3px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .ranking .ranking-data:nth-child(2) .ranking-no,
+        .ranking .ranking-data:nth-child(3) .ranking-no,
+        .ranking .ranking-data:nth-child(4) .ranking-no {
+            background-color: #be040a;
+        }
+
+        .ranking .ranking-data {
+            border-bottom: 1px solid #e2e2e2;
+            padding: 5px 0;
+        }
+
+        .ranking .ranking-star {
+            float: right;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .list-post {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-post li {
+            border-bottom: 1px solid #e2e2e2;
+            padding: 15px 5px 10px 0;
+        }
+
+        .list-post .post .post-right {
+            display: table-cell;
+        }
+
+        .list-post .post h4 {
+            margin: 0;
+        }
+
+        .list-post .post img {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .list-post .post .post-info {
+            margin: 10px 0;
+            color: #888;
+        }
+
+        .list-post .post .post-body {
+            height: 60px;
+            color: #666;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+
+        .list-post .list-post-more {
+            width: 100%;
+            margin: 20px auto;
+            background-color: #eef0f1;
+            padding: 10px 0;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航栏开始-->
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand" id="mylogo">MANGYU</a>
+            </div>
+            <label id="toggle-label" class="visible-xs-inline-block" for="toggle-checkbox">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </label>
+            <input class="hidden" id="toggle-checkbox" type="checkbox">
+            <div class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">推荐</a>
+                    </li>
+                    <li>
+                        <a href="#">热门</a>
+                    </li>
+                    <li>
+                        <a href="#">最新</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">情感</a></li>
+                            <li><a href="#">技术</a></li>
+                            <li><a href="#">文学</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">国外</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">其他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-li-user">
+                        <span class="glyphicon glyphicon-user"></span><a href="login.html">登录</a>
+                    </li>
+                    <li>
+                        <a href="login.html">登出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--导航栏结束-->
+
+    <!--页面内容开始-->
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="container-header">
+                    <h4>博客</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+
+            <!--主页左边内容开始-->
+            <div class="col-md-8 column">
+                <!--轮播图开始-->
+                <div class="carousel slide" id="carousel-910904">
+                    <ol class="carousel-indicators">
+                        <li class="active" data-slide-to="0" data-target="#carousel-910904">
+                        </li>
+                        <li data-slide-to="1" data-target="#carousel-910904">
+                        </li>
+                        <li data-slide-to="2" data-target="#carousel-910904">
+                        </li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/1/default.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    First Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/2/default.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    Second Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/3/default.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    Third Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+                                    dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-910904" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-910904" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                <!--轮播图结束-->
+
+                <!--主体热门博文开始-->
+                <section class="conent">
+                    <h4 class="content-title">热门博文</h4>
+                    <ul class="list-post">
+                        <li>
+                            <div class="post">
+                                <a href="post.html" class="post-left">
+                                    <img src="http://tx.tianyaui.com/logo/74972299" alt='' />
+                                </a>
+                                <div class="post-right">
+                                    <h4 class="post-heading">
+                                        <a href="post.html">Nested media heading</a>
+                                    </h4>
+                                    <p class="post-info">
+                                        <span>2018-09-05</span> ⋅
+                                        <span>09:33:00</span> ⋅
+                                        <span>120</span>预览 ⋅
+                                        <span>0</span>回复</p>
+                                    <p class="post-body">修于公元七世纪的法隆寺，与七世纪八世纪乃至九世纪的日本伽蓝一样，都受惠于唐朝。七世纪后期重建的法隆寺（今天的法隆寺）、八世纪的东大寺（直到十二世纪后期东大寺的重建，日本寺庙才完成了从唐式东传到日本化的转变）、八世纪的唐招提寺等，其建筑式样与大佛、菩萨造像，基本</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="post">
+                                <a href="post.html" class="post-left">
+                                    <img src="http://tx.tianyaui.com/logo/74972299" alt='' />
+                                </a>
+                                <div class="post-right">
+                                    <h4 class="post-heading">
+                                        <a href="post.html">Nested media heading</a>
+                                    </h4>
+                                    <p class="post-info">
+                                        <span>2018-09-05</span> ⋅
+                                        <span>09:33:00</span> ⋅
+                                        <span>120</span>预览 ⋅
+                                        <span>0</span>回复</p>
+                                    <p class="post-body">修于公元七世纪的法隆寺，与七世纪八世纪乃至九世纪的日本伽蓝一样，都受惠于唐朝。七世纪后期重建的法隆寺（今天的法隆寺）、八世纪的东大寺（直到十二世纪后期东大寺的重建，日本寺庙才完成了从唐式东传到日本化的转变）、八世纪的唐招提寺等，其建筑式样与大佛、菩萨造像，基本</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="post">
+                                <a href="post.html" class="post-left">
+                                    <img src="http://tx.tianyaui.com/logo/74972299" alt='' />
+                                </a>
+                                <div class="post-right">
+                                    <h4 class="post-heading">
+                                        <a href="post.html">Nested media heading</a>
+                                    </h4>
+                                    <p class="post-info">
+                                        <span>2018-09-05</span> ⋅
+                                        <span>09:33:00</span> ⋅
+                                        <span>120</span>预览 ⋅
+                                        <span>0</span>回复</p>
+                                    <p class="post-body">修于公元七世纪的法隆寺，与七世纪八世纪乃至九世纪的日本伽蓝一样，都受惠于唐朝。七世纪后期重建的法隆寺（今天的法隆寺）、八世纪的东大寺（直到十二世纪后期东大寺的重建，日本寺庙才完成了从唐式东传到日本化的转变）、八世纪的唐招提寺等，其建筑式样与大佛、菩萨造像，基本</p>
+                                </div>
+                            </div>
+                        </li>
+                        <p class="btn btn-default list-post-more">加载更多</p>
+                    </ul>
+                </section>
+                <!--主体热门博文结束-->
+            </div>
+            <!--主页左边内容结束-->
+
+            <!--主页右边内容开始-->
+            <div class="col-md-4 column container-right">
+                <div class="search-bar mysearch">
+                    <input type="search" class="form-control" placeholder="搜一下">
+                    <button class="btn mysearch-btn">搜索</button>
+                </div>
+                <section class="block block-right-top">
+                    <h3>有见识的人都在这里</h3>
+                    <p>表达网民立场,，记录个人生活，聚集意见领袖，众多草根精英，以我们的观点影响社会的进程 。</p>
+                    <a href="writepost.html" class="btn btn-primary">发表博文</a>
+                </section>
+
+                <!--最新模块开始-->
+                <section class="rightlist">
+                    <h4>最新博文</h4>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html">Nested media heading</a>
+                            </h4> Cras sit amet nibh libero, in gravida nulla. citudin commodo.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html">Nested media heading</a>
+                            </h4> Cras sit amet nibh libero, in gravida nulla. citudin commodo.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html">Nested media heading</a>
+                            </h4> Cras sit amet nibh libero, in gravida nulla. citudin commodo.
+                        </div>
+                    </div>
+                </section>
+                <!--最新模块结束-->
+
+                <!--博文排行开始-->
+                <section class="rightlist ranking">
+                    <h4>博文排行</h4>
+                    <p class="ranking-data">
+                        <span class="ranking-no">01</span>
+                        <a href="post.html" class="ranking-title">区块链不止于技术，更关乎人性？</a>
+                        <span class="ranking-star">999</span>
+                    </p>
+                    <p class="ranking-data">
+                        <span class="ranking-no">02</span>
+                        <a href="post.html" class="ranking-title">区块链不止于技术，更关乎人性？</a>
+                        <span class="ranking-star">888</span>
+                    </p>
+                    <p class="ranking-data">
+                        <span class="ranking-no">03</span>
+                        <a href="post.html" class="ranking-title">区块链不止于技术，更关乎人性？</a>
+                        <span class="ranking-star">777</span>
+                    </p>
+                    <p class="ranking-data">
+                        <span class="ranking-no">04</span>
+                        <a href="post.html" class="ranking-title">区块链不止于技术，更关乎人性？</a>
+                        <span class="ranking-star">666</span>
+                    </p>
+                </section>
+                <!--博文排行结束-->
+
+            </div>
+            <!--主页右边内容结束-->
+        </div>
+    </div>
+    <!--页面内容结束-->
+    <div class="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><p>TOP</p></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="mainjs/totop.js"></script>   <!--回到顶部-->
+    <script>
+        $(function () {
+
+        })
+    </script>
+</body>
+
+</html>

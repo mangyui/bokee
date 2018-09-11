@@ -1,0 +1,85 @@
+body{
+    background-color: #9dcac7;
+}
+.user-info,
+.user-activity {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.user-info .user-avatar,
+.user-level {
+    text-align: center;
+}
+
+.user-info .user-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 2px;
+    box-shadow: 0 1px 3px #000;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0 10px;
+}
+
+.user-fans {
+    font-size: 0;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.user-fans .user-fans-box {
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 49%;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.user-fans .user-fans-box .user-fans-num {
+    color: #e54b4b;
+    margin: 10px 0 5px;
+}
+
+.user-todata {
+    width: 90%;
+    margin: 10px auto;
+    color: #888;
+    font-size: 16px;
+}
+
+.user-todata span {
+    color: #444;
+}
+
+.user-title {
+    font-weight: bold;
+    margin: 0 0 20px -20px;
+    padding:10px 0 10px 20px; 
+    border-left: 8px solid #b71c1c;
+}
+
+.user-title a{
+    float: right;
+    color: #666;
+    text-decoration: underline;
+}
+
+.user-info-base .user-todata {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.user-btn{
+    text-align: center;
+}
