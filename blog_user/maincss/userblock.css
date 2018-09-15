@@ -7,7 +7,7 @@ body{
     height: auto;
     margin-bottom: 15px;
     padding: 20px;
-    box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 1px 3px rgba(151,151,151,0.58);
 }
 
 .user-info .user-avatar,
@@ -19,9 +19,7 @@ body{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 1px solid #fff;
-    padding: 2px;
-    box-shadow: 0 1px 3px #000;
+    box-shadow: 0 1px 3px rgba(151,151,151,0.58);
 }
 
 .user-name {
