@@ -1,0 +1,237 @@
+.navbar {
+    background-color: #22262e;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 99;
+}
+#mylogo{
+    background:-webkit-linear-gradient(left,#147B96,#E6D205 25%,#147B96 50%,#E6D205 75%,#147B96);
+    color:transparent;
+    -webkit-background-clip:text;
+    background-size:200% 100%;
+    animation:masked-animation 1.5s infinite linear;
+}
+@-webkit-keyframes masked-animation {
+    0% {
+    background-position:0 0;
+    }
+    100% {
+        background-position:-100% 0;
+    }
+}
+.navbar h4 {
+    margin: 0;
+    line-height: 50px;
+    color: #fff;
+    float: left
+}
+
+.navbar .logout{
+    float: right;
+}
+.navbar .logout .admin-aset{
+    color: #fff;
+    line-height: 50px;
+    font-size: 15px;
+    margin-right: 36px;
+}
+.navbar .logout .glyphicon{
+    margin-right: 5px;
+}      
+
+.navbar .dropdown{
+    display: inline-block;
+}
+.navbar .dropdown a{
+    text-decoration: none;
+    color: #fff;
+    line-height: 50px;
+    font-size: 15px;
+}
+.navbar .dropdown .dropdown-menu{
+    background-color: #22262e;  
+}
+/*页头样式结束*/
+
+.leftul {
+    padding: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    position: absolute;
+    height: 100%;
+    top: 11px;
+}
+
+.leftul .top-hidden {
+    height: 40px;
+}
+
+.leftul .search input {
+    border: 0;
+    border-bottom: 1px solid #f3f3f3;
+    border-radius: 0;
+    padding: 20px 0 20px 40px;
+    height: 40px;
+}
+
+.leftul .search input:focus {
+    box-shadow: none;
+}
+
+.leftul .search {
+    position: relative;
+    z-index: 5;
+}
+
+.leftul .search .glyphicon {
+    position: absolute;
+    line-height: 38px;
+    left: 20px;
+    color: #2dc3e8;
+    cursor: pointer;
+}
+
+.leftul ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.leftul ul a {
+    color: #777;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.leftul ul a:hover {
+    color: #000;
+
+}
+
+#ulNav li {
+    padding: 0;
+    border-bottom: 1px solid #f3f3f3;
+    cursor: pointer;
+}
+
+#ulNav>li:hover>a {
+    background-color: #f3f3f3;
+}
+
+#ulNav li .left-icon {
+    margin-right: 10px;
+}
+
+#ulNav li .right-icon {
+    float: right;
+    transition: all 0.3s ease-in-out;
+}
+
+#ulNav li .right-icon::before {
+    font-size: 1px;
+}
+
+#ulNav .two-ul {
+    width: 100%;
+    /* box-shadow: inset 0 4px 4px -2px rgba(0, 0, 0, .15), inset 0 -4px 4px -2px rgba(0, 0, 0, .15); */
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: #ddd;
+}
+
+
+#ulNav .two-ul a {
+    padding-left: 55px;
+}
+
+#ulNav .active-liNav {     /*一级级导航列表选中效果*/ 
+    border-top: 1px solid #337ab7;
+}
+
+#ulNav .active-liNav>a {
+    color: #000;
+}
+
+#ulNav .active-liNav>a .right-icon {
+    transform: rotate(90deg);
+}
+
+#ulNav .active-liNav .two-ul {
+    height: auto;
+}
+
+#ulNav .active-two-li{     /*二级导航列表选中效果*/       
+    background-color: #22262e;
+
+}
+#ulNav .active-two-li a{
+    color: #fff;
+}
+
+#toggle-label {         /*响应式导航列表显示和隐藏*/
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+    display: none;
+    z-index: 1000;
+}
+
+#toggle-label .glyphicon {
+    color: #fff;
+    font-size: 20px;
+}
+
+#toggle-checkbox:checked~.hidden-xs {
+    display: block !important;
+    height: auto;
+    z-index: 88;
+    background-color: #fff;
+}
+
+/* 右侧主内容主模板样式*/
+.top-title {
+    margin-left: 210px;
+    padding-left: 15px;
+}
+
+.rightbody {
+    margin-left: 215px;
+    padding: 20px;
+}
+
+.top-title {
+    background-color: #fcfcfc;
+    min-height: 40px;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    z-index: 1;
+    line-height: 40px;
+}
+
+.top-title .breadcrumb{
+    padding:0 0 0 10px;
+    margin-bottom: 0px; 
+    list-style: none;
+    background-color:transparent; 
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+
+@media (max-width: 767px) {       /*响应式*/
+    .top-title,
+    .rightbody {
+        margin-left: 0px;
+    }
+    .navbar .logout{
+        display: none;
+    }
+}
+
