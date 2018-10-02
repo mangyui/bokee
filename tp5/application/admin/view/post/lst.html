@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博文列表</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!--页头开始-->
+    {include file="common/header"/}
+    <!--页头结束-->
+
+    <!--页面内容开始-->
+    <div class="mycontainer">
+        <div class="clearfix">
+
+            <!--菜单列表开始-->
+            {include file="common/left_menu"/}
+            <!--菜单列表结束-->
+
+            <!--右侧主内容开始-->
+            <section class="top-title">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('Index/index')}">控制面板</a>
+                        </li>
+                        <li class="active">博文列表</li>
+                    </ol>
+                </div>
+            </section>
+            <div class="rightbody">
+                <table class="mytable">
+                    <tr>
+                        <th class="">ID</th>
+                        <th>博文名称</th>
+                        <th >文章作者</th>
+                        <th class="">是否推荐</th>
+                        <th class="">缩略图</th>
+                        <th class="">所属栏目</th>
+                        <th class="wd20">操作</th>
+                    </tr>
+                    {volist name="list" id="vo"}
+                        <td>{$vo.id}</td>
+                        <td>{$vo.title}</td>
+                        <td>
+                            {if condition="$vo['pic'] neq ''"}
+                            {$vo.author}
+                            {else /}
+                            匿名
+                            {/if}
+                        </td>
+                        <td>
+                            {if condition="$vo['state'] eq 1"}
+                            已推荐
+                            {else /}
+                            未推荐
+                            {/if}
+                        </td>
+                        <td>
+                            {if condition="$vo['pic'] neq ''"}
+                             <img src="__IMG__{$vo['pic']}" height="50"/>
+                            {else /}
+                            暂无缩略图
+                            {/if}
+                        </td>
+                        <td>{$vo.cate.catename}</td>
+                        <td>
+                            <a href="{:url('post/edit',array('id'=>$vo['id']))}" class="label label-warning">
+                                <span class="glyphicon glyphicon-edit"></span>编辑</a>
+                            <a  onclick="layerwaring('确定要删除吗','{:url(\'post/del\',array(\'id\'=>$vo[\'id\']))}')" class="label label-danger">
+                                <span class="glyphicon glyphicon-trash"></span>删除</a>
+                        </td>
+                    </tr>
+                   {/volist}
+                </table>
+                <div class="fenye">
+                    {$list->render()}
+                </div>
+            </div>
+            <!--右侧主内容结束-->
+        </div>
+    </div>
+    <!--页面内容结束-->
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/layer/layer.js"></script>
+    <script>
+        function layerwaring(mess,url) {
+            layer.confirm(mess, {         //询问框
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                window.location.href=url;
+            }, function(){
+                layer.msg('取消成功', {icon: 1});
+            });
+        }
+        $(function () {
+            $('#ulNav>li').click(function () {
+                $(this).toggleClass('active-liNav');
+            });
+        })
+    </script>
+</body>
+
+</html>

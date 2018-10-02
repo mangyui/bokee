@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员列表</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!--页头开始-->
+    {include file="common/header"/}
+    <!--页头结束-->
+
+    <div class="mycontainer">
+        <div class="clearfix">
+
+            <!--菜单列表开始-->
+            {include file="common/left_menu"/}
+            <!--菜单列表结束-->
+
+            <!--主内容开始-->
+            <section class="top-title">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('Index/index')}">控制面板</a>
+                        </li>
+                        <li>
+                        <a href="{:url('Admin/lst')}">管理员列表</a>
+                       </li>
+                        <li class="active">修改管理员</li>
+                    </ol>
+                </div>
+            </section>
+            <div class="rightbody">
+                <div class="myform-form">
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="{$admins.id}">
+                        <div class="myform-line">
+                            <label class="myform-left">管理员名称：</label>
+                            <div class="myform-right">
+                                <input class="myform-input" name="username" type="text"  value="{$admins.username}">
+                            </div>
+                        </div>
+                        <div class="myform-line">
+                            <label class="myform-left">管理员密码：</label>
+                            <div class="myform-right">
+                                <input class="myform-input" name="password" type="password" placeholder="留空表示不修改">
+                            </div>
+                        </div>
+                        <div class="myform-line">
+                            <div class="myform-right">
+                                <input class="myform-btn" type="submit" value="保存">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--右侧主内容结束-->
+        </div>
+    </div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#ulNav>li').click(function () {
+                $(this).toggleClass('active-liNav');
+            })
+        })
+    </script>
+</body>
+
+</html>

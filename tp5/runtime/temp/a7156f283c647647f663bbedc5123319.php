@@ -1,0 +1,358 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/index\view\post\post.html";i:1537973561;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\index\view\common\header.html";i:1537967049;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博文详情</title>
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/maincss/main.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/maincss/userblock.css">
+    <!--直接用用户中心样式-->
+    <style>
+        .post-info {
+            margin: 10px 0;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .post-title,
+        .post-info,
+        .post-label {
+            text-align: center;
+        }
+
+        .post-label {
+            margin: 20px 0;
+        }
+
+        .post-label .label {
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .post-content {
+            font-size: 17px;
+            line-height: 200%;
+            text-indent: 2em;
+            margin-bottom: 20px;
+        }
+
+        .post-praise {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .post-praise .btn {
+            padding: 10px;
+            width: 100px;
+            border-radius: 50px;
+            vertical-align: middle;
+        }
+
+        .post-praise .btn .glyphicon {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #666;
+        }
+
+        .post-comments {
+            list-style: none;
+            padding-left: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .post-comments li {
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .post-comments li img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .post-comments li .post-comments-body {
+            width: 100%;
+        }
+
+        .post-comments li .post-comments-name {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .post-comments li .post-comments-content {
+            margin: 10px 0;
+        }
+
+        .post-comments li .post-comments-time {
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+
+        .post-comments li .post-comments-reply {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航栏开始-->
+    <div class="navbar navbar-default">
+    <div class="container">
+
+        <!--Logo开始-->
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand" id="mylogo">MANGYU</a>
+        </div>
+        <!--Logo结束-->
+
+        <!--响应式菜单按钮开始-->
+        <label id="toggle-label" class="visible-xs-inline-block" for="toggle-checkbox">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </label>
+        <input class="hidden" id="toggle-checkbox" type="checkbox">
+        <!--响应式菜单按钮结束-->
+        <!--导航栏菜单开始-->
+        <div class="hidden-xs">
+            <!--左菜单-->
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="index.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">推荐</a>
+                </li>
+                <li>
+                    <a href="#">热门</a>
+                </li>
+                <li>
+                    <a href="#">最新</a>
+                </li>
+                <!--下拉更多分类开始-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">情感</a>
+                        </li>
+                        <li>
+                            <a href="#">技术</a>
+                        </li>
+                        <li>
+                            <a href="#">文学</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="#">国外</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="#">其他</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--下拉更多分类结束-->
+            </ul>
+            <!--右菜单-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-li-user">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <a href="login.html" class="">登录</a>
+                </li>
+                <li>
+                    <a href="login.html">登出</a>
+                </li>
+            </ul>
+        </div>
+        <!--导航栏菜单结束-->
+    </div>
+</div>
+    <!--导航栏结束-->
+
+    <!--页面内容开始-->
+    <div class="container">
+        <div class="row clearfix">
+            <!--左边内容开始-->
+            <div class="col-md-3">
+                <div class="user-info">
+                    <h4 class="user-title">博主信息</h4>
+                    <div class="user-avatar">
+                        <a href="usercenter.html">
+                            <img src="http://127.0.0.1/test1/public/static/index/img/avatar.jpg" alt="头像">
+                        </a>
+                    </div>
+                    <p class="user-name">MANGYU</p>
+                    <p class="user-level">
+                        <span class="label label-success">Lv 6</span>
+                    </p>
+                    <p class="user-todata">签名：
+                        <span>该用户很懒，什么都没留下！</span>
+                    </p>
+                    <div class="user-fans">
+                        <div class="user-fans-box">
+                            <p class="user-fans-num">66</p>
+                            <p>关注</p>
+                        </div>
+                        <div class="user-fans-box">
+                            <p class="user-fans-num">666</p>
+                            <p>粉丝</p>
+                        </div>
+                    </div>
+                    <p class="user-btn">
+                        <span class="btn btn-default">关注他</span>
+                    </p>
+                </div>
+
+                <div class="user-info">
+                    <h4 class="user-title">相关推荐</h4>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html">Nested media</a>
+                            </h4> Cras sit amet nibh libero
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html"> heading</a>
+                            </h4> Cras sit amet nibh libero
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a href="post.html" class="pull-left">
+                            <img src="http://tx.tianyaui.com/logo/74972299" class="media-object" alt='' />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="post.html"> heading</a>
+                            </h4> Cras sit amet nibh libero
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--左边内容结束-->
+
+            <!--右边内容开始-->
+            <div class="col-md-9">
+                <div class="user-activity">
+                    <h4 class="user-title">博文内容</h4>
+                    <h2 class="post-title">人还是需要点精神的</h2>
+                    <p class="post-label">
+                        <span class="label label-info">文学</span>
+                    </p>
+                    <p class="post-info">
+                        <span>2018-09-05</span> ⋅
+                        <span>09:33:00</span> ⋅
+                        <span>120</span>预览 ⋅
+                        <span>0</span>回复
+                    </p>
+                    <p class="post-content"> 一直不怎么看电视的我，今年暑假在女儿的强烈推荐下看了《延禧攻略》，自己主动看了《最美的青春》。无意中发现这是老天冥冥中的恩赐，后者是前者的解药。 之所以看《延禧攻略》开始还觉得它很多地方尊重历史，在众多宫廷剧中也算有点历史视野有点历史操守了。但看到最后也发现太多的情结狗血的一塌糊涂，几乎是全然不顾宫廷礼仪，封建礼教了，俨然一部礼教规矩的穿越剧。为了剧情为了迎合观众，编剧真成了编剧，连历史都能随意编写。
+                        现在太多人不看书、不读史，他们的历史基本都是从电视剧中获得的。剧中怎样呈现他们就认为曾经的历史是怎样的。 历史在编剧的一念之间，喜好之间。 咱们现在不仅有电视剧抗日，还有电视剧历史，电视剧新闻，电视剧科技，一切都可以做成八卦。导演，编剧，演员，只要有了收视率便有了一切！
+                        至于精神，那真就无所谓了。就如同那个段子：要耳朵要舌头要嘴巴就是不要脸！ 《最美的青春》那个时代的特有的丰碑，是那个时代人的精神神柱。 《延禧攻略》有所有宫廷剧中的勾心斗角，明争暗斗，心机复杂，城府纵深，看的我这个头脑简单的人累眼累心近乎心力交瘁，赶紧去看两节《最美的青春》让自己平复平静平气。
+                        我不留恋那个年代，但我留恋甚至迷恋那种精神，纯粹、无尘、淡然、超脱。 那个年代，所有人性都在历史的舞台上展露无遗，许多丑陋的人性站到了舞台中心，成了主角，但那是短暂的，哪怕十年，在历史的长河里也是弹指一挥，白驹过隙。而所有的过程中，那些美好的人性都没有被玷污，没有被埋没，他们哪怕纤如山间野草，轻若空中尘埃，他们一直挺立着，一直闪耀着。风雨以后不蒙尘，不变节，依然故我，玉洁如初。
+                        冯程只是那个时代有信仰的一群。 赵天山大队长、于正来场长都是那个时代的原则、情义、情怀的代言。他们不呆板也不圆通，但他们有一个共同的气质：坚守、坚定！ 每次邀请女儿一起看《最美的青春》时，都被善良的女儿笑嘻嘻婉拒。
+                        她每次都嘻嘻哈哈但其实是不怕伤我的心地说出实话。 现在的孩子看剧中那些艰苦卓绝的生存状态、生存环境，生存方式觉的天方夜谭不可思议。再看那些人不计报酬不较得失的付出更是觉得那是一个生了病的群体，还病的不轻。当看到人与人之间相互帮衬，相互理解，物质共享的场面时那就更当“纯虚构”了，“这可能吗？”是他们共同的疑惑。
+                        无论我怎样解释，女儿只是当作完成一个尊重我的形式，耐心地静静听完，然后有点怆然地笑着看看我，眼底的话我清楚：妈妈，这些及时有，也不是我们的三观能接受的！ 历史，不会回头，但历史也不能被忘记。 现在我们的GDP跟悟空的筋斗一样，连续翻连还翻。人均收入逐年增加，脱贫速度赶上了宇宙飞船。我们唯独忽视了精神。
+                        我们的学校规模一年比一年大，硬件设施堪称世界一流了，无可挑剔的完备、先进。但我们的教育已经只有“教”没有“育”了，只有成绩没有素质了。 家庭教育更多的是防备，防守，猜忌，争抢，拥挤；少了甚至没了敞开、信任、理解、谦让、换位思考，而这些都是高贵的精神，精神贵族。
+                        大学教育就更不用提了，各门老师给学生传授的很少知识，更多技巧，最多的是待遇！唯独没有精神。 而人最需要的是精神。 经济，服饰、住房，车马是人的硬包装，再豪华再高端都是硬邦邦冷冰冰的“硬件”，知识，素质、涵养才是无形但必须的软包装，软件。
+                    </p>
+                    <div class="post-praise">
+                        <p class="btn btn-default">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            <span class="post-praise-num">66</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="user-activity">
+                    <h4 class="user-title">博文评论</h4>
+                    <ul class="post-comments">
+                        <li>
+                            <img src="http://127.0.0.1/test1/public/static/index/img/avatar.jpg">
+                            <div class="post-comments-body">
+                                <h6 class="post-comments-name">的撒名</h6>
+                                <p class="post-comments-content">的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯的撒娇达拉斯</p>
+                                <span class="post-comments-time">2018-09-11 21:10</span>
+                                <a class="post-comments-reply" href="#">回复</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://127.0.0.1/test1/public/static/index/img/avatar.jpg">
+                            <div class="post-comments-body">
+                                <h6 class="post-comments-name">的撒名</h6>
+                                <p class="post-comments-content">的撒娇达拉斯</p>
+                                <span class="post-comments-time">2018-09-11 21:10</span>
+                                <a class="post-comments-reply" href="#">回复</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                                <li>
+                                    <a href="#">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--右边内容结束-->
+        </div>
+    </div>
+    <!--页面内容结束-->
+
+    <!--回到顶部按钮-->
+    <div class="back-to-top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        <p>TOP</p>
+    </div>
+
+    <script src="http://127.0.0.1/test1/public/static/index/js/jquery.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/index/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/index/mainjs/totop.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

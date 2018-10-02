@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改博文</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+<!--页头开始-->
+{include file="common/header"/}
+<!--页头结束-->
+
+<div class="mycontainer">
+    <div class="clearfix">
+
+        <!--菜单列表开始-->
+        {include file="common/left_menu"/}
+        <!--菜单列表结束-->
+
+        <!--主内容开始-->
+        <section class="top-title">
+            <div class="col-md-12 column">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:url('Index/index')}">控制面板</a>
+                    </li>
+                    <li>
+                        <a href="{:url('post/lst')}">博文列表</a>
+                    </li>
+                    <li class="active">修改博文</li>
+                </ol>
+            </div>
+        </section>
+        <div class="rightbody">
+            <div class="myform-form">
+                <form action="" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="id" value="{$post.id}">
+                    <div class="myform-line">
+                        <label class="myform-left">博文标题：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="title" type="text" value="{$post.title}">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文作者：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="author" type="text" value="{$post.author}">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">关键字：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="keywords" type="text" value="{$post.keywords}">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文说明：</label>
+                        <div class="myform-right">
+                            <textarea class="myform-textarea" name="desc">{$post.desc}</textarea>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">原缩略图：</label>
+                        <div class="myform-right">
+                            {if condition="$post['pic'] neq ''"}
+                            <img  src="__IMG__{$post.pic}" height="50">
+                            {else /}
+                            暂无缩略图
+                            {/if}
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">修改缩略图：</label>
+                        <div class="myform-right">
+                            <input id="pic" class="myform-input" name="pic" type="file">
+
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">请选择栏目：</label>
+                        <div class="myform-right">
+                            <select class="myform-input" name="cateid">
+                                <option value="">请选择栏目</option>
+                                {volist name='cates' id='vo'}
+                                <option {if condition="$vo['id'] eq $post['cateid']"} selected="selected" {/if} value="{$vo.id}">{$vo.catename}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">是否推荐：</label>
+                        <div class="myform-right">
+                        <span class="myform-switch">
+                            <input class="hidden" type="checkbox" {if condition="$post['state'] eq 1"} checked="checked" {/if} name="state" id="switch-checkbox">
+                            <label for="switch-checkbox" class="myform-switch-label">
+                                <span class="myform-switch-ring"></span>
+                            </label>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文正文：</label>
+                        <div class="myform-right">
+                            <textarea class="myform-textarea" name="content">{$post.content}</textarea>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <div class="myform-right">
+                            <input class="myform-btn" type="submit" value="保存">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--右侧主内容结束-->
+    </div>
+</div>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#ulNav>li').click(function () {
+            $(this).toggleClass('active-liNav');
+        })
+     /*   $("#pic").change(function () {
+            $("#picimg").attr("src",$(this).val());
+        })*/
+    })
+</script>
+</body>
+
+</html>

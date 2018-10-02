@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发表博文</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/maincss/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/maincss/userblock.css">
+    <!--直接用用户中心样式-->
+    <style>
+        .write-title {
+            margin: 30px 0 15px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .write-post-title input,
+        .write-post-content textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .write-post-title input {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .write-btn {
+            text-align: center;
+        }
+
+        .write-btn .btn {
+            font-size: 18px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航栏开始-->
+    {include file="common/header"/}
+    <!--导航栏结束-->
+
+    <!--页面内容开始-->
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="user-activity">
+                    <h4 class="user-title">发表博文</h4>
+                    <h5 class="write-title">博文标题</h5>
+                    <p class="write-post-title">
+                        <input type="text">
+                    </p>
+                    <h5 class="write-title">博文内容</h5>
+                    <p class="write-post-content">
+                        <textarea name="post" id="post" cols="30" rows="20"></textarea>
+                    </p>
+                    <p class="write-btn">
+                        <span class="btn btn-primary">发表</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--页面内容结束-->
+
+    <!--回到顶部按钮-->
+    <div class="back-to-top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        <p>TOP</p>
+    </div>
+
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/mainjs/totop.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加链接</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!--页头开始-->
+    {include file="common/header"/}
+    <!--页头结束-->
+
+    <div class="mycontainer">
+        <div class="clearfix">
+
+            <!--菜单列表开始-->
+            {include file="common/left_menu"/}
+            <!--菜单列表结束-->
+
+            <!--主内容开始-->
+            <section class="top-title">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('Index/index')}">控制面板</a>
+                        </li>
+                        <li class="active">添加链接</li>
+                    </ol>
+                </div>
+            </section>
+            <div class="rightbody">
+                <div class="myform-form">
+                    <form action="" method="post">
+                    <div class="myform-line">
+                        <label class="myform-left">链接标题：</label>
+                        <div class="myform-right">
+                             <input class="myform-input" name="title" type="text" placeholder="链接标题">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">链接地址：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="url" type="text" placeholder="链接地址">
+                         </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">链接说明：</label>
+                        <div class="myform-right">
+                            <textarea class="myform-textarea" name="desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <div class="myform-right">
+                            <input class="myform-btn" type="submit" value="添加">
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!--右侧主内容结束-->
+        </div>
+    </div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#ulNav>li').click(function () {
+                $(this).toggleClass('active-liNav');
+            })
+        })
+    </script>
+</body>
+
+</html>

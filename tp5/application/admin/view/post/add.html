@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加博文</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!--页头开始-->
+    {include file="common/header"/}
+    <!--页头结束-->
+
+    <div class="mycontainer">
+        <div class="clearfix">
+
+            <!--菜单列表开始-->
+            {include file="common/left_menu"/}
+            <!--菜单列表结束-->
+
+            <!--主内容开始-->
+            <section class="top-title">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('Index/index')}">控制面板</a>
+                        </li>
+                        <li class="active">添加博文</li>
+                    </ol>
+                </div>
+            </section>
+            <div class="rightbody">
+                <div class="myform-form">
+                    <form action="" enctype="multipart/form-data" method="post">
+                    <div class="myform-line">
+                        <label class="myform-left">博文标题：</label>
+                        <div class="myform-right">
+                             <input class="myform-input" name="title" type="text" placeholder="博文标题">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文作者：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="author" type="text" placeholder="">
+                         </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">关键字：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="keywords" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文说明：</label>
+                        <div class="myform-right">
+                            <textarea class="myform-textarea" name="desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">缩略图：</label>
+                        <div class="myform-right">
+                            <input class="myform-input" name="pic" type="file">
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">请选择栏目：</label>
+                        <div class="myform-right">
+                            <select class="myform-input" name="cateid">
+                                <option value="">请选择栏目</option>
+                                {volist name='cates' id='vo'}
+                                <option value="{$vo.id}">{$vo.catename}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">是否推荐：</label>
+                        <div class="myform-right">
+                        <span class="myform-switch">
+                            <input class="hidden" type="checkbox"  name="state" id="switch-checkbox">
+                            <label for="switch-checkbox" class="myform-switch-label">
+                                <span class="myform-switch-ring"></span>
+                            </label>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <label class="myform-left">博文正文：</label>
+                        <div class="myform-right">
+                            <textarea class="myform-textarea" name="content"></textarea>
+                        </div>
+                    </div>
+                    <div class="myform-line">
+                        <div class="myform-right">
+                            <input class="myform-btn" type="submit" value="添加">
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!--右侧主内容结束-->
+        </div>
+    </div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#ulNav>li').click(function () {
+                $(this).toggleClass('active-liNav');
+            })
+         /*   $("#switch-checkbox").click(function () {
+                alert($(this).prop("checked"));        //prop判断是否选择
+            })*/
+        })
+    </script>
+</body>
+
+</html>

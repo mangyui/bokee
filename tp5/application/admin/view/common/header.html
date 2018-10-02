@@ -1,0 +1,32 @@
+<header class="navbar navbar-default">
+    <div class="mycontainer">
+        <a href="{:url('index/index')}" class="navbar-brand" id="mylogo">MANGYU</a>
+        <h4>后台管理</h4>
+        <section class="logout">
+            <a class="admin-aset" href="{:url('admin/info')}">
+                <span class="glyphicon glyphicon-user"></span>{$Request.session.username}</a>
+
+            <!--下拉更多分类开始-->
+            <div class="dropdown admin-aset">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">设置1</a>
+                    </li>
+                    <li>
+                        <a href="#">设置2</a>
+                    </li>
+                    <li>
+                        <a href="#">设置3</a>
+                    </li>
+                </ul>
+            </div>
+            <!--下拉更多分类结束-->
+
+            <a class="admin-aset" href="{:url('admin/logout')}">
+                <span class="glyphicon glyphicon-log-out"></span>登出</a>
+        </section>
+    </div>
+</header>

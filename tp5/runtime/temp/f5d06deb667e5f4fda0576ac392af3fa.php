@@ -1,0 +1,277 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:93:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/admin\view\admin_list\admin_list.html";i:1538054169;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\header.html";i:1538139594;s:78:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\left_menu.html";i:1538139665;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员列表</title>
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/tocss/main.css">
+    <style>
+        /*管理员列表表格样式开始*/
+
+        .rightbody .mytable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .mytable th,
+        .mytable td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .mytable th {
+            background-color: #eee;
+        }
+
+        .mytable tr:not(:first-child):hover {
+            background-color: rgb(250, 250, 250);
+        }
+
+        .mytable .label {
+            font-size: 15px;
+            font-weight: normal;
+            padding-top: 5px;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .mytable .label .glyphicon {
+            margin-right: 5px;
+        }
+
+        .mytable .wd20 {
+            /*非账号列占宽*/
+            width: 20%;
+        }
+
+        /*管理员列表表格样式结束*/
+
+        .fenye {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--页头开始-->
+    <header class="navbar navbar-default">
+    <div class="mycontainer">
+        <a href="<?php echo url('index'); ?>" class="navbar-brand" id="mylogo">MANGYU</a>
+        <h4>后台管理</h4>
+        <section class="logout">
+            <a class="admin-aset" href="<?php echo url('AdminInfo'); ?>">
+                <span class="glyphicon glyphicon-user"></span>mangyu</a>
+
+            <!--下拉更多分类开始-->
+            <div class="dropdown admin-aset">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">设置1</a>
+                    </li>
+                    <li>
+                        <a href="#">设置2</a>
+                    </li>
+                    <li>
+                        <a href="#">设置3</a>
+                    </li>
+                </ul>
+            </div>
+            <!--下拉更多分类结束-->
+
+            <a class="admin-aset" href="<?php echo url('Login/index'); ?>">
+                <span class="glyphicon glyphicon-log-out"></span>登出</a>
+        </section>
+    </div>
+</header>
+    <!--页头结束-->
+
+    <!--页面内容开始-->
+    <div class="mycontainer">
+        <div class="clearfix">
+
+            <!--菜单列表开始-->
+            <label id="toggle-label" class="visible-xs-inline-block" for="toggle-checkbox">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+</label>
+<input class="hidden" id="toggle-checkbox" type="checkbox">
+<nav class="column leftul hidden-xs">
+    <div>
+        <div class="top-hidden"></div>
+        <div class="search">
+            <span class="glyphicon glyphicon-search"></span>
+            <input type="text" class="form-control">
+        </div>
+        <ul id="ulNav">
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-user left-icon"></span>管理员
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="<?php echo url('AdminList/index'); ?>">管理员列表
+                            <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo url('AdminAdd/index'); ?>">添加管理员
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-list-alt left-icon"></span>博文
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="#">博文列表
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">添加博文
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-cog left-icon"></span>系统
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="<?php echo url('AdminInfo/index'); ?>">系统信息
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="<?php echo url('Login/index'); ?>">
+                    <span class="glyphicon glyphicon-log-out left-icon"></span>登出
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+            <!--菜单列表结束-->
+
+            <!--右侧主内容开始-->
+            <section class="top-title">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">控制面板</a>
+                        </li>
+                        <li class="active">管理员列表</li>
+                    </ol>
+                </div>
+            </section>
+            <div class="rightbody">
+                <table class="mytable">
+                    <tr>
+                        <th class="wd20">ID</th>
+                        <th>账号</th>
+                        <th class="wd20">状态</th>
+                        <th class="wd20">操作</th>
+                    </tr>
+                    <tr>
+                        <td>666</td>
+                        <td>MANGYU</td>
+                        <td>
+                            <span class="label label-success">正常</span>
+                        </td>
+                        <td>
+                            <a href="#" class="label label-warning">
+                                <span class="glyphicon glyphicon-edit"></span>编辑</a>
+                            <a href="#" class="label label-danger">
+                                <span class="glyphicon glyphicon-trash"></span>删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>666</td>
+                        <td>MANGYU</td>
+                        <td>
+                            <span class="label label-warning">异常</span>
+                        </td>
+                        <td>
+                            <a href="#" class="label label-warning">
+                                <span class="glyphicon glyphicon-edit"></span>编辑</a>
+                            <a href="#" class="label label-danger">
+                                <span class="glyphicon glyphicon-trash"></span>删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>666</td>
+                        <td>MANGYU</td>
+                        <td>
+                            <span class="label label-danger">错误</span>
+                        </td>
+                        <td>
+                            <a href="#" class="label label-warning">
+                                <span class="glyphicon glyphicon-edit"></span>编辑</a>
+                            <a href="#" class="label label-danger">
+                                <span class="glyphicon glyphicon-trash"></span>删除</a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="fenye">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination  pagination-lg">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--右侧主内容结束-->
+        </div>
+    </div>
+    <!--页面内容结束-->
+    <script src="http://127.0.0.1/test1/public/static/admin/js/jquery.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/admin/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#ulNav>li').click(function () {
+                $(this).toggleClass('active-liNav');
+            })
+        })
+    </script>
+</body>
+
+</html>

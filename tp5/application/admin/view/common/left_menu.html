@@ -1,0 +1,106 @@
+<label id="toggle-label" class="visible-xs-inline-block" for="toggle-checkbox">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+</label>
+<input class="hidden" id="toggle-checkbox" type="checkbox">
+<nav class="column leftul hidden-xs">
+    <div>
+        <div class="top-hidden"></div>
+        <div class="search">
+            <span class="glyphicon glyphicon-search"></span>
+            <input type="text" class="form-control">
+        </div>
+        <ul id="ulNav">
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-user left-icon"></span>管理员
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="{:url('admin/lst')}">管理员列表
+                            <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('admin/add')}">添加管理员
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-bookmark left-icon"></span>栏目
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="{:url('cate/lst')}">栏目列表
+                            <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('cate/add')}">添加栏目
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-list-alt left-icon"></span>博文
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="{:url('post/lst')}">博文列表
+                            <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('post/add')}">添加博文
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-link left-icon"></span>友情链接
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="{:url('links/lst')}">链接列表
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('links/add')}">添加链接
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-cog left-icon"></span>系统
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+                <ul class="two-ul">
+                    <li>
+                        <a href="{:url('admin/info')}">系统信息
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hidden">
+                <a href="{:url('admin/logout')}">
+                    <span class="glyphicon glyphicon-log-out left-icon"></span>登出
+                    <span class="glyphicon glyphicon-menu-right right-icon"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+   /* var twoli=document.querySelector('.active-two-li');
+    var li=twoli.parentNode.parentNode;
+    li.classList.add('active-liNav');*/
+</script>
