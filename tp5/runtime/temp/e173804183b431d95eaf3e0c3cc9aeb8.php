@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/index\view\login\login.html";i:1538051577;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/index\view\login\login.html";i:1538548304;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录注册</title>
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/common/css/bootstrap-theme.min.css">
     <style>
         .blur{
-            background: url("http://127.0.0.1/test1/public/static/index/img/loginbg.jpg");
+            background: url('http://127.0.0.1/test1/public/static/index/img/loginbg.jpg');
 /*             -webkit-filter: blur(15px);
             -moz-filter: blur(15px);
             -o-filter: blur(15px);
@@ -150,8 +150,8 @@
         <div class="col-md-3 column">
         </div>
     </div>
-    <script src="http://127.0.0.1/test1/public/static/index/js/jquery.min.js"></script>
-    <script src="http://127.0.0.1/test1/public/static/index/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/common/js/jquery.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/common/js/bootstrap.min.js"></script>
     <script>
         $(function () {
 

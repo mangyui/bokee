@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/admin\view\post\add.html";i:1538468038;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\header.html";i:1538470776;s:78:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\left_menu.html";i:1538471125;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/admin\view\post\add.html";i:1538547613;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\header.html";i:1538470776;s:78:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\left_menu.html";i:1538471125;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>添加博文</title>
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/tocss/main.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/css/main.css">
     <style>
 
     </style>
@@ -246,17 +246,11 @@
             <!--右侧主内容结束-->
         </div>
     </div>
-    <script src="http://127.0.0.1/test1/public/static/admin/js/jquery.min.js"></script>
-    <script src="http://127.0.0.1/test1/public/static/admin/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/common/js/jquery.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/common/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1/test1/public/static/admin/js/main.js"></script>
     <script>
-        $(function () {
-            $('#ulNav>li').click(function () {
-                $(this).toggleClass('active-liNav');
-            })
-         /*   $("#switch-checkbox").click(function () {
-                alert($(this).prop("checked"));        //prop判断是否选择
-            })*/
-        })
+
     </script>
 </body>
 

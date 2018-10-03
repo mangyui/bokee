@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/admin\view\cate\edit.html";i:1538382939;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\header.html";i:1538140387;s:78:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\left_menu.html";i:1538384734;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/admin\view\cate\edit.html";i:1538547714;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\header.html";i:1538470776;s:78:"G:\phpStudy\PHPTutorial\WWW\test1\application\admin\view\common\left_menu.html";i:1538471125;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>修改栏目</title>
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/tocss/main.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/admin/css/main.css">
     <style>
 
     </style>
@@ -23,7 +23,7 @@
         <h4>后台管理</h4>
         <section class="logout">
             <a class="admin-aset" href="<?php echo url('admin/info'); ?>">
-                <span class="glyphicon glyphicon-user"></span>mangyu</a>
+                <span class="glyphicon glyphicon-user"></span><?php echo \think\Request::instance()->session('username'); ?></a>
 
             <!--下拉更多分类开始-->
             <div class="dropdown admin-aset">
@@ -44,7 +44,7 @@
             </div>
             <!--下拉更多分类结束-->
 
-            <a class="admin-aset" href="<?php echo url('Login/index'); ?>">
+            <a class="admin-aset" href="<?php echo url('admin/logout'); ?>">
                 <span class="glyphicon glyphicon-log-out"></span>登出</a>
         </section>
     </div>
@@ -67,35 +67,35 @@
             <input type="text" class="form-control">
         </div>
         <ul id="ulNav">
-            <li class="<?php if(request()->controller() == 'admin'): ?>active-liNav<?php endif; ?>">
+            <li>
                 <a>
                     <span class="glyphicon glyphicon-user left-icon"></span>管理员
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
                 <ul class="two-ul">
-                    <li class="<?php if(request()->action() == 'lst'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('admin/lst'); ?>">管理员列表
                             <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
                         </a>
                     </li>
-                    <li class="<?php if(request()->action() == 'add'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('admin/add'); ?>">添加管理员
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="<?php if(request()->controller() == 'admin'): ?>active-liNav<?php endif; ?>">
+            <li>
                 <a>
                     <span class="glyphicon glyphicon-bookmark left-icon"></span>栏目
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
                 <ul class="two-ul">
-                    <li class="<?php if(request()->action() == 'lst'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('cate/lst'); ?>">栏目列表
                             <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
                         </a>
                     </li>
-                    <li class="<?php if(request()->action() == 'add'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('cate/add'); ?>">添加栏目
                         </a>
                     </li>
@@ -107,28 +107,28 @@
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
                 <ul class="two-ul">
-                    <li class="<?php if(request()->action() == 'lst'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('post/lst'); ?>">博文列表
                             <!--   <span class="glyphicon glyphicon-menu-right right-icon"></span> -->
                         </a>
                     </li>
-                    <li class="<?php if(request()->action() == 'add'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('post/add'); ?>">添加博文
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="<?php if(request()->controller() == 'links'): ?>active-liNav<?php endif; ?>">
+            <li>
                 <a>
                     <span class="glyphicon glyphicon-link left-icon"></span>友情链接
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
                 <ul class="two-ul">
-                    <li  class="<?php if(request()->action() == 'lst'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('links/lst'); ?>">链接列表
                         </a>
                     </li>
-                    <li class="<?php if(request()->action() == 'add'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('links/add'); ?>">添加链接
                         </a>
                     </li>
@@ -140,14 +140,14 @@
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
                 <ul class="two-ul">
-                    <li class="<?php if(request()->action() == 'info'): ?>active-two-li<?php endif; ?>">
+                    <li>
                         <a href="<?php echo url('admin/info'); ?>">系统信息
                         </a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="<?php echo url('Login/index'); ?>">
+            <li class="hidden">
+                <a href="<?php echo url('admin/logout'); ?>">
                     <span class="glyphicon glyphicon-log-out left-icon"></span>登出
                     <span class="glyphicon glyphicon-menu-right right-icon"></span>
                 </a>
@@ -204,14 +204,11 @@
         <!--右侧主内容结束-->
     </div>
 </div>
-<script src="http://127.0.0.1/test1/public/static/admin/js/jquery.min.js"></script>
-<script src="http://127.0.0.1/test1/public/static/admin/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1/test1/public/static/common/js/jquery.min.js"></script>
+<script src="http://127.0.0.1/test1/public/static/common/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1/test1/public/static/admin/js/main.js"></script>
 <script>
-    $(function () {
-        $('#ulNav>li').click(function () {
-            $(this).toggleClass('active-liNav');
-        })
-    })
+
 </script>
 </body>
 

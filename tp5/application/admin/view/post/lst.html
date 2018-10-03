@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>博文列表</title>
-    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/tocss/main.css">
+    <link rel="stylesheet" href="__COMMON__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
     <style>
 
     </style>
@@ -90,9 +90,10 @@
         </div>
     </div>
     <!--页面内容结束-->
-    <script src="__PUBLIC__/js/jquery.min.js"></script>
-    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
-    <script src="__PUBLIC__/layer/layer.js"></script>
+    <script src="__COMMON__/js/jquery.min.js"></script>
+    <script src="__COMMON__/js/bootstrap.min.js"></script>
+    <script src="__COMMON__/layer/layer.js"></script>
+    <script src="__PUBLIC__/js/main.js"></script>
     <script>
         function layerwaring(mess,url) {
             layer.confirm(mess, {         //询问框
@@ -103,11 +104,6 @@
                 layer.msg('取消成功', {icon: 1});
             });
         }
-        $(function () {
-            $('#ulNav>li').click(function () {
-                $(this).toggleClass('active-liNav');
-            });
-        })
     </script>
 </body>
 

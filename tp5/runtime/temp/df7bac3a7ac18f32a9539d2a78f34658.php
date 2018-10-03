@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/index\view\index\index.html";i:1538579850;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\index\view\common\header.html";i:1538560769;s:74:"G:\phpStudy\PHPTutorial\WWW\test1\application\index\view\common\right.html";i:1538574410;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:85:"G:\phpStudy\PHPTutorial\WWW\test1\public/../application/index\view\search\search.html";i:1538580159;s:75:"G:\phpStudy\PHPTutorial\WWW\test1\application\index\view\common\header.html";i:1538560769;s:74:"G:\phpStudy\PHPTutorial\WWW\test1\application\index\view\common\right.html";i:1538574410;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MANGYU博客</title>
+    <title>搜索</title>
     <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/common/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/css/main.css">
     <link rel="stylesheet" href="http://127.0.0.1/test1/public/static/index/css/index.css">
     <style>
-
+        section.conent{
+            margin: 0;
+        }
+        .container-header h4{
+            background: none;
+        }
+        .container-header h4 .less{
+            font-size: 17px;
+            color: #444;
+        }
     </style>
 </head>
 
@@ -91,7 +100,7 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="container-header">
-                    <h4>博客</h4>
+                    <h4><span class="less">搜索关键字： </span><?php echo $keywords; ?></h4>
                 </div>
             </div>
         </div>
@@ -101,61 +110,13 @@
             <!--主页左边内容开始-->
             <div class="col-md-8 column">
                 <!--轮播图开始-->
-                <div class="carousel slide" id="carousel-910904">
-                    <ol class="carousel-indicators">
-                        <li class="active" data-slide-to="0" data-target="#carousel-910904">
-                        </li>
-                        <li data-slide-to="1" data-target="#carousel-910904">
-                        </li>
-                        <li data-slide-to="2" data-target="#carousel-910904">
-                        </li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/1/default.jpg" />
-                            <div class="carousel-caption">
-                                <h4>
-                                    First Thumbnail label
-                                </h4>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/2/default.jpg" />
-                            <div class="carousel-caption">
-                                <h4>
-                                    Second Thumbnail label
-                                </h4>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/3/default.jpg" />
-                            <div class="carousel-caption">
-                                <h4>
-                                    Third Thumbnail label
-                                </h4>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#carousel-910904" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-910904" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
+
                 <!--轮播图结束-->
 
                 <!--主体热门博文开始-->
                 <section class="conent">
-                    <h4 class="content-title">推荐博文</h4>
                     <ul class="list-post">
-                        <?php if(is_array($post) || $post instanceof \think\Collection || $post instanceof \think\Paginator): $i = 0; $__LIST__ = $post;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                        <?php if(is_array($search) || $search instanceof \think\Collection || $search instanceof \think\Paginator): $i = 0; $__LIST__ = $search;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                         <li>
                             <div class="post">
                                 <a href="<?php echo url('post/index',array('postid'=>$vo['id'])); ?>" class="post-left">
@@ -165,18 +126,18 @@
                                     <h4 class="post-heading">
                                         <a href="<?php echo url('post/index',array('postid'=>$vo['id'])); ?>"><?php echo $vo['title']; ?></a>
                                     </h4>
-                                    <p class="post-info">
-                                        <span><?php echo date("Y-m-d ⋅ H:i:s",$vo['time']); ?></span> ⋅
-                                        <span><?php echo $vo['click']; ?></span>预览 ⋅
-                                        <span>0</span>回复</p>
+                                    <span><?php echo date("Y-m-d ⋅ H:i:s",$vo['time']); ?></span> ⋅
+                                    <span><?php echo $vo['click']; ?></span>预览 ⋅
+                                    <span>0</span>回复</p>
                                     <p class="post-body"><?php echo $vo['desc']; ?></p>
                                     <span class="cate"><?php echo $vo['cate']['catename']; ?></span>
                                 </div>
                             </div>
                         </li>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
-                        <p class="btn btn-default list-post-more">加载更多</p>
                     </ul>
+                    <div class="text-center">
+                    </div>
                 </section>
                 <!--主体热门博文结束-->
             </div>

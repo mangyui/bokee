@@ -1,9 +1,9 @@
 <?php
 namespace app\index\controller;
 
-use think\Controller;
+use app\index\Controller\Base;
 
-class Publish extends Controller
+class Publish extends Base
 {
     public function index()
     {

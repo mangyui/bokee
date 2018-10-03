@@ -1,0 +1,55 @@
+<div class="col-md-4 column container-right">
+
+    <!--搜索框位置-->
+    <div class="search-bar mysearch">
+        <form action="{:url('Search/index')}" method="get">
+            <input type="search" class="form-control" name="keywords" placeholder="搜一下">
+            <button class="btn mysearch-btn">搜索</button>
+        </form>
+    </div>
+
+    <!--主页发表博文入口-->
+    <section class="block block-right-top">
+        <h3>有见识的人都在这里</h3>
+        <p>表达网民立场,，记录个人生活，聚集意见领袖，众多草根精英，以我们的观点影响社会的进程 。</p>
+        <a href="{:url('publish/index')}" class="btn btn-primary">发表博文</a>
+    </section>
+
+    <!--最新模块开始-->
+    <section class="rightlist">
+        <h4>最新博文</h4>
+        {volist name='newres' id='vo'}
+        <div class="media">
+            <a href="{:url('post/index',array('postid'=>$vo['id']))}" class="pull-left">
+                <img src="{if condition="$vo['pic'] neq '' "}__IMG__{$vo.pic}{else /}__COMMON__/images/none.png{/if}" class="media-object" alt='' />
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="{:url('post/index',array('postid'=>$vo['id']))}">{$vo.title}</a>
+                </h4> {$vo.desc}
+            </div>
+        </div>
+       {/volist}
+    </section>
+    <!--最新模块结束-->
+
+    <!--博文排行开始-->
+    <section class="rightlist ranking">
+        <h4>博文排行</h4>
+        {volist name='clicks' id='vo'}
+        <p class="ranking-data">
+            <span class="ranking-no">02</span>
+            <a href="{:url('post/index',array('postid'=>$vo['id']))}" class="ranking-title">{$vo.title}</a>
+            <span class="ranking-star">{$vo.click}</span>
+        </p>
+        {/volist}
+    </section>
+    <!--博文排行结束-->
+    <script>
+        var no=document.querySelectorAll('.ranking-no');
+        for(var i=0; i<no.length;i++)
+        {
+            no[i].innerText='0'+(i+1);
+        }
+    </script>
+</div>

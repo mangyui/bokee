@@ -3,7 +3,7 @@
 
         <!--Logo开始-->
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand" id="mylogo">MANGYU</a>
+            <a href="{:url('index/index')}" class="navbar-brand" id="mylogo">MANGYU</a>
         </div>
         <!--Logo结束-->
 
@@ -16,19 +16,15 @@
         <!--导航栏菜单开始-->
         <div class="hidden-xs">
             <!--左菜单-->
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="index.html">首页</a>
-                </li>
+            <ul class="nav navbar-nav" id="navbar">
                 <li>
-                    <a href="#">推荐</a>
+                    <a href="{:url('index/index')}">首页</a>
                 </li>
+                {volist name='cateres' id='vo'}
                 <li>
-                    <a href="#">热门</a>
+                    <a href="{:url('cate/index',array('cateid'=>$vo['id']))}">{$vo.catename}</a>
                 </li>
-                <li>
-                    <a href="#">最新</a>
-                </li>
+                {/volist}
                 <!--下拉更多分类开始-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多
@@ -36,17 +32,15 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">情感</a>
-                        </li>
+                           <a href="#">推荐</a>
+                       </li>
+                        <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">技术</a>
-                        </li>
-                        <li>
-                            <a href="#">文学</a>
+                            <a href="#">最新</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">国外</a>
+                            <a href="#">排行</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
@@ -60,10 +54,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-li-user">
                     <span class="glyphicon glyphicon-user"></span>
-                    <a href="login.html" class="">登录</a>
+                    <a href="{:url('login/index')}" class="">登录</a>
                 </li>
                 <li>
-                    <a href="login.html">登出</a>
+                    <a href="{:url('login/index')}">登出</a>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索</title>
+    <link rel="stylesheet" href="__COMMON__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/index.css">
+    <style>
+        section.conent{
+            margin: 0;
+        }
+        .container-header h4{
+            background: none;
+        }
+        .container-header h4 .less{
+            font-size: 17px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航栏开始-->
+   {include file="common/header"/}
+    <!--导航栏结束-->
+
+    <!--页面内容开始-->
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="container-header">
+                    <h4><span class="less">搜索关键字： </span>{$keywords}</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+
+            <!--主页左边内容开始-->
+            <div class="col-md-8 column">
+                <!--轮播图开始-->
+
+                <!--轮播图结束-->
+
+                <!--主体热门博文开始-->
+                <section class="conent">
+                    <ul class="list-post">
+                        {volist name='search' id='vo'}
+                        <li>
+                            <div class="post">
+                                <a href="{:url('post/index',array('postid'=>$vo['id']))}" class="post-left">
+                                    <img src="{if condition="$vo['pic'] neq '' "}__IMG__{$vo.pic}{else /}__COMMON__/images/none.png{/if}" alt='' />
+                                </a>
+                                <div class="post-right">
+                                    <h4 class="post-heading">
+                                        <a href="{:url('post/index',array('postid'=>$vo['id']))}">{$vo.title}</a>
+                                    </h4>
+                                    <span>{$vo['time']|date="Y-m-d ⋅ H:i:s",###}</span> ⋅
+                                    <span>{$vo.click}</span>预览 ⋅
+                                    <span>0</span>回复</p>
+                                    <p class="post-body">{$vo.desc}</p>
+                                    <span class="cate">{$vo.cate.catename}</span>
+                                </div>
+                            </div>
+                        </li>
+                        {/volist}
+                    </ul>
+                    <div class="text-center">
+                    </div>
+                </section>
+                <!--主体热门博文结束-->
+            </div>
+            <!--主页左边内容结束-->
+
+            <!--主页右边内容开始-->
+            {include file="common/right"/}
+            <!--主页右边内容结束-->
+        </div>
+    </div>
+    <!--页面内容结束-->
+
+    <!--回到顶部按钮-->
+    <div class="back-to-top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        <p>TOP</p>
+    </div>
+
+    <script src="__COMMON__/js/jquery.min.js"></script>
+    <script src="__COMMON__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/main.js"></script>
+    <!--回到顶部js文件-->
+    <script>
+        $(function () {
+
+        })
+    </script>
+</body>
+
+</html>
